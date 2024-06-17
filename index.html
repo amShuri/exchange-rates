@@ -15,12 +15,12 @@
   </head>
 
   <body>
-    <main class="container py-5 w-900">
+    <main class="container pt-5 pb-4 w-900">
       <h1 class="gray text-center mb-5">Daily Exchange Rates</h1>
 
       <form action="#">
-        <div class="row d-flex justify-content-center align-items-end">
-          <div class="col-auto">
+        <div class="row px-2 d-flex justify-content-center align-items-end">
+          <div class="col-sm-auto">
             <label for="currency-selector">Chosen Currency</label>
             <select class="form-select" id="currency-selector" required>
               <option value="" selected>Select a country</option>
@@ -30,7 +30,7 @@
             </select>
           </div>
 
-          <div class="col-auto">
+          <div class="col-sm-auto">
             <label for="date-selector">Date</label>
             <input
               class="form-control"
@@ -40,7 +40,7 @@
             />
           </div>
 
-          <div class="col-auto">
+          <div class="col-sm-auto mt-2 text-center">
             <button class="btn btn-primary">Submit</button>
           </div>
         </div>
