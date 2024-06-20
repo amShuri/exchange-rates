@@ -48,6 +48,24 @@ function updateDateInput() {
   $dateInput.value = `${year}-${month}-${day}`;
 }
 
+function showLoadingIndicator() {
+  const $tbody = document.querySelector("tbody");
+  $tbody.innerHTML = "";
+
+  $tbody.insertAdjacentHTML(
+    "beforeend",
+    `
+      <tr>
+        <td colspan="3" class="text-center" id="no-data">
+          <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+          </div>
+          <p class="sr-only m-0">Loading . . .</span>
+        </td>
+      </tr>
+    `
+  );
+}
+
 async function initialize() {
   // Update the Date Input with the current date
   updateDateInput();
@@ -60,6 +78,9 @@ async function initialize() {
     e.preventDefault();
     const date = document.querySelector("input[type='date']").value;
     const countryCode = document.querySelector("select").value;
+
+    // Show loading indicator
+    showLoadingIndicator();
 
     // Populate rows in the <table> element
     await createTable(date, countryCode);
